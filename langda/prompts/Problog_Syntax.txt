@@ -1,0 +1,24 @@
+<Syntax_Notes>
+*** Problog Syntax Notes***
+ProbLog supports a subset of Prolog's control constructs (logical connectives and meta-predicates) that do not break the logical (declarative) semantics. 
+It excludes features like cuts and imperative control that have no meaning in a probabilistic setting.
+
+Supported control predicates:
+- Conjunction: P, Q (both P and Q must succeed).
+- Disjunction: P; Q (either P or Q succeeds).
+- true/0 (always succeeds).
+- fail/0 (always fails) and synonym false/0.
+- Negation-as-failure: \+/1 (or its alias not/1).
+- Meta-call: call/1 (invoke a goal at runtime) and call/N for N up to 9 (for calling predicates with N-1 additional arguments).
+- You can also write a goal directly as a term (which is equivalent to call/1).
+
+Supported arithmetic evaluation and comparison: 
+- X is Y (evaluate expression Y and unify with X).
+- Comparison Operators X < Y, X =< Y (or <=), X > Y, X >= Y, as well as numeric equality X =:= Y and inequality X =\\= Y (which compare numerical values after evaluation).
+
+Not supported control constructs:
+- The cut !/0 is not supported (no hard cut in ProbLog; see the Cut library for an alternative soft cut mechanism).
+- The if-then (->) and if-then-else (*->) constructs are not supported. (You can achieve a similar effect using (Condition, Action) ; (\+ Condition, Alternative).)
+
+** Other situations can be obtained by calling the tool
+</Syntax_Notes>

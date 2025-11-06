@@ -1,0 +1,48 @@
+Your task is to regenerate the code in each <langda> block inside <Regenerate_format>
+
+<Regenerate_format>
+{input}
+<Regenerate_format>
+
+<Regenerate_Instructions>
+1. In <Regenerate_format> you will see the code template format to be followed, and the <langda> block in the template marks the part that needs to be completed.
+2. Your task is to generate and output the complete Problog/DeepProbLog code according to the user's specific requirements for each <langda> block. The new code should fix the error in previous code.
+</Regenerate_Instructions>
+
+<Final_Answer> The generated completed code should be formatted as follows:
+// other contents
+```problog
+//the completed code here
+```
+</Final_Answer>
+
+*** split ***
+In section <origin_code> and <generated_code> you will be give two codes,
+- in <origin_code> there's incomplete code with <langda> blocks.
+- in <generated_code> there's completed code of <origin_code>.
+your task is to extract and format each code block in <generated_code> that corresponds to the <langda> blocks in <origin_code>
+<origin_code>
+
+{template_code}
+
+</origin_code>
+<generated_code>
+
+{first_chain_output}
+
+<generated_code>
+<Final_Answer> 
+For each code block, extract it and format it in the following JSON format, please remove all code comments:
+
+```problog
+{{"HASH": "XXXX1234","Code": "Completed code snippet 1"}}
+```
+```problog
+{{"HASH": "XXXX3456","Code": "Completed code snippet 2"}}
+```
+
+If there's no corresponding code exist:
+```problog
+{{"HASH": "XXXX7890","Code": ""}}
+```
+</Final_Answer>

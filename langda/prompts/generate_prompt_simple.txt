@@ -1,0 +1,20 @@
+Your task is to generate the complete code based on the user's requirements in each <langda> block.
+<Code>
+
+{input}
+
+</Code>
+<Final_Answer>
+Please generate each code in JSON form for each code block using a single problog block of the following form, please remove all code comments:
+
+```problog
+{{"HASH": "XXXX1234","Code": "Completed code snippet 1"}}
+```
+```problog
+{{"HASH": "XXXX3456","Code": "Completed code snippet 2"}}
+```
+
+If there's no corresponding code:
+```problog
+{{"HASH": "XXXX7890","Code": ""}}
+```

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "anmoaly_5",
+    "title": "Earthquake Risk Forecast: July 10–15",
+    "content": "For the period July 10–15, the earthquake probability is moderate:\n - Estimated probability: 33%\n - Suggested actions: Monitor seismic sensors and reinforce emergency protocols in susceptible regions.",
+    "embedding_text": "Earthquake risk July 10,11,12,13,14,15 probability 33% seismic activity disaster preparedness emergency planning earthquake forecast early warning tectonic movement",
+    "tags": ["earthquake", "forecast", "July_10_15"],
+    "keywords": ["earthquake", "July 10–15", "33%"]
+  },
+    {
+    "id": "anmoaly_61",
+    "title": "Earthquake Risk Forecast: July 16",
+    "content": "For the period July 16, the earthquake probability is elevated:\n - Estimated probability: 45%\n - Suggested actions: Increase monitoring, perform infrastructure inspections, and alert local response teams.",
+    "embedding_text": "Earthquake forecast July 16 elevated risk 45% seismic probability disaster management structural check early warning system",
+    "tags": ["earthquake", "forecast", "July_16"],
+    "keywords": ["earthquake", "July 16", "45%"]
+  },
+    {
+    "id": "anmoaly_62",
+    "title": "Earthquake Risk Forecast: July 17",
+    "content": "For the period July 17, the earthquake probability is elevated:\n - Estimated probability: 45%\n - Suggested actions: Increase monitoring, perform infrastructure inspections, and alert local response teams.",
+    "embedding_text": "Earthquake forecast July 17 elevated risk 45% seismic probability disaster management structural check early warning system",
+    "tags": ["earthquake", "forecast", "July_17"],
+    "keywords": ["earthquake", "July 17", "45%"]
+  },
+    {
+    "id": "anmoaly_63",
+    "title": "Earthquake Risk Forecast: July 18",
+    "content": "For the period July 18, the earthquake probability is elevated:\n - Estimated probability: 45%\n - Suggested actions: Increase monitoring, perform infrastructure inspections, and alert local response teams.",
+    "embedding_text": "Earthquake forecast July 18 elevated risk 45% seismic probability disaster management structural check early warning system",
+    "tags": ["earthquake", "forecast", "July_18"],
+    "keywords": ["earthquake", "July 18", "45%"]
+  },
+  {
+    "id": "anmoaly_64",
+    "title": "Earthquake Risk Forecast: July 19",
+    "content": "For the period July 19, the earthquake probability is elevated:\n - Estimated probability: 45%\n - Suggested actions: Increase monitoring, perform infrastructure inspections, and alert local response teams.",
+    "embedding_text": "Earthquake forecast July 19 elevated risk 45% seismic probability disaster management structural check early warning system",
+    "tags": ["earthquake", "forecast", "July_19"],
+    "keywords": ["earthquake", "July 19", "45%"]
+  },
+  {
+    "id": "anmoaly_65",
+    "title": "Earthquake Risk Forecast: July 20",
+    "content": "For the period July 20, the earthquake probability is elevated:\n - Estimated probability: 45%\n - Suggested actions: Increase monitoring, perform infrastructure inspections, and alert local response teams.",
+    "embedding_text": "Earthquake forecast July 20 elevated risk 45% seismic probability disaster management structural check early warning system",
+    "tags": ["earthquake", "forecast", "July_20"],
+    "keywords": ["earthquake", "July 20", "45%"]
+  },
+  {
+    "id": "anmoaly_7",
+    "title": "Earthquake Risk Forecast: July 21–29",
+    "content": "For the period July 21–29, the earthquake probability is high:\n - Estimated probability: 62%\n - Suggested actions: Immediate readiness advised, activate disaster response protocols, secure critical infrastructure.",
+    "embedding_text": "Earthquake prediction July 21,22,23,24,25,26,27,28,29 high probability 62% emergency alert seismic wave tectonic threat infrastructure readiness",
+    "tags": ["earthquake", "forecast", "July_21_29"],
+    "keywords": ["earthquake", "July 21–29", "62%"]
+  }
+]

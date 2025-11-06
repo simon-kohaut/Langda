@@ -1,0 +1,25 @@
+Your task is to regenerate the code in each <langda> block inside <Code>
+in each <langda> block, <Report> shows why the <Current_Code> need to be regenerated, please regenerate the code according based on these information.
+<Regenerate_format>
+{input}
+<Regenerate_format>
+
+<Regenerate_Instructions>
+1. In <Regenerate_format> you will see the code template format to be followed, and the <langda> block in the template marks the part that needs to be completed.
+2. Your task is to generate and output the complete Problog/DeepProbLog code according to the user's specific requirements for each <langda> block. The new code should fix the error in previous code.
+</Regenerate_Instructions>
+<Final_Answer>
+Please regenerate the block content that needs to be regenerated according to the analysis report in JSON form, for each code block using a single problog block of the following form, please remove all code comments:
+
+```problog
+{{"HASH": "XXXX1234","Code": "Completed code snippet 1"}}
+```
+```problog
+{{"HASH": "XXXX3456","Code": "Completed code snippet 2"}}
+```
+
+If there's no corresponding code:
+```problog
+{{"HASH": "XXXX7890","Code": ""}}
+```
+</Final_Answer>

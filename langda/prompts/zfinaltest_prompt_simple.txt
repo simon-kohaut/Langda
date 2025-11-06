@@ -1,0 +1,35 @@
+Please compare the following two pieces of code and judge whether the generated code meets expectations. The output is required to be strictly in the specified format.
+
+<Original_Code>
+### Original code:
+
+{original_ruleset}
+
+<Result>
+### Run result:
+{original_result}
+</Result>
+</Original_Code>
+
+<Generated_Code>
+### Generated code:
+
+{generated_ruleset}
+
+<Result>
+### Run result:
+{generated_result}
+</Result>
+</Generated_Code>
+
+<Final_Answer>
+Please return the analysis report in JSON format. The fields are as follows:
+- Report: Briefly describe the correctness of the generated code, its consistency with the original code, and any problems if any(less than 200 words).
+- Validity_form: Boolean value, indicating whether the generated code itself is valid and meets the requirements (true or false).
+- Validity_result: Boolean value, indicating whether the running results of the two pieces of code are consistent (true or false).
+
+Output format:
+```report
+{{"Report": "Fill in your analysis here...", "Validity_form": true|false,"Validity_result": true|false}}
+```
+</Final_Answer>

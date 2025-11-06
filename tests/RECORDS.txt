@@ -1,0 +1,282 @@
+** Manuall Fix Part: benchquery:rough.pl they all get the correct result, get the correct country pairs
+  but the llm has been too critical to the form of the result, so I fixed them to "true".
+(There may be other misjudgments, but I haven't had time to fix them yet)
+** Brief Statistics: 
+  - DoubleDC: (all tools)
+    * Time:28362 *
+    "form_accuracy":   0.824 [169/205]
+    "result_accuracy": 0.722 [148/205]
+
+  - DoubleDC: (report tool only)
+    * Time:37167s *
+    "form_accuracy":   0.820 [168/205]
+    "result_accuracy": 0.702 [144/205]
+
+  - DoubleDC: (no tool)
+    * Time:38667 *
+    "form_accuracy":   0.771 [158/205]
+    "result_accuracy": 0.701 [145/205]
+
+  - DoubleDC: (no hash mechanism)
+    * Time:38667 *
+    "form_accuracy":   0.768 [158/205]
+    "result_accuracy": 0.634 [145/205]
+
+  - SingleDC (with tools):
+    * Time:12788s *
+    "form_accuracy":   0.756 [155/205]
+    "result_accuracy": 0.668 [137/205]
+
+  - SingleDC (no tool):
+    * Time:7597 *
+    "form_accuracy":   0.698 [143/205]
+    "result_accuracy": 0.654 [134/205]
+
+  - DoubleSimple:
+    * Time:17185s *
+    "form_accuracy":   0.727 [149/205]
+    "result_accuracy": 0.668 [137/205]
+
+  - SingleSimple:
+    * Time:7364s *
+    "form_accuracy":   0.585 [120/205]
+    "result_accuracy": 0.580 [119/205]
+
+  - Baseline:
+    * Time:9577s *
+    "form_accuracy":   0.678 [139/205]
+    "result_accuracy": 0.595 [122/205]
+
+  - React:
+    * Time:7534s *
+    "form_accuracy":   0.60 [118/205]
+    "result_accuracy": 0.54 [106/205]
+
+  - Direct:
+
+    * Time:7484s *
+    "form_accuracy":   none
+    "result_accuracy": 0.40 [106/205]
+
+
+** DoubleDC ** (with improved prompt and all tools)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 28362.075444936752,
+    "average_process_time": 138.35158753627684,
+    "success_form_count": 169,
+    "success_result_count": 148,
+    "invalid_form_count": 36,
+    "invalid_result_count": 57,
+    "error_count": 0,
+    "overall_success_form_rate": 0.824390243902439,
+    "overall_success_result_rate": 0.7219512195121951,
+  }
+}
+
+** DoubleDC ** (with improved prompt and report tool only)
+{ # old, this is not so trustful, because we use a dummy "report tool" with a prompt "focus on current code" 
+to prevent agent "could not find tool" issue, which could has some effect on agent.
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 37167.87762639029,
+    "average_process_time": 181.30672012873313,
+    "success_form_count": 165,
+    "success_result_count": 146,
+    "invalid_form_count": 40,
+    "invalid_result_count": 59,
+    "error_count": 1,
+    "form_accuracy": 0.8048780487804879,
+    "result_accuracy": 0.7121951219512195,
+  }
+}
+
+# new, instead use a "dummy report tool" we use a simple agent for cases that there's no tool called at all. More reliable!
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 25254.51147532463,
+    "average_process_time": 123.19273890402259,
+    "success_form_count": 170,
+    "success_result_count": 148,
+    "invalid_form_count": 35,
+    "invalid_result_count": 57,
+    "error_count": 1,
+    "overall_success_form_rate": 0.8292682926829268,
+    "overall_success_result_rate": 0.7219512195121951,
+  }
+}
+
+** DoubleDC ** (without any tool)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 38667.41578364372,
+    "average_process_time": 188.62154040801815,
+    "success_form_count": 158,
+    "success_result_count": 145,
+    "invalid_form_count": 45,
+    "invalid_result_count": 58,
+    "error_count": 2,
+    "overall_success_form_rate": 0.7707317073170732,
+    "overall_success_result_rate": 0.7073170731707317,
+  }
+}
+
+** DoubleDC ** (without hash mechanism)
+{
+  "test_completed": true,
+  "total_files": 41,
+  "repeat_count": 2,
+  "total_runs": 82,
+  "overall_process_time": 13001.665666818619,
+  "avg_time_per_run": 139.64864213001437,
+  "success_form_count": 63,
+  "success_result_count": 52,
+  "invalid_form_count": 19,
+  "invalid_result_count": 30,
+  "error_count": 0,
+  "success_form_rate": 0.7682926829268293,
+  "success_result_rate": 0.6341463414634146,
+}
+
+** SingleDC ** (with improved prompt and tools)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 12788.736860990524,
+    "average_process_time": 62.384082248734266,
+    "success_form_count": 155,
+    "success_result_count": 137,
+    "invalid_form_count": 50,
+    "invalid_result_count": 68,
+    "error_count": 0,
+    "form_accuracy": 0.7560975609756098,
+    "result_accuracy": 0.6682926829268293,
+  }
+}
+
+** SingleDC ** (without any tool)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 7597.360096693039,
+    "average_process_time": 37.06029315460019,
+    "success_form_count": 143,
+    "success_result_count": 134,
+    "invalid_form_count": 59,
+    "invalid_result_count": 68,
+    "error_count": 3,
+    "overall_success_form_rate": 0.697560975609756,
+    "overall_success_result_rate": 0.6536585365853659,
+  }
+}
+
+
+** DoubleSimple ** (with improved prompt)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 17185.84219765663,
+    "average_process_time": 83.83337657393479,
+    "success_form_count": 149,
+    "success_result_count": 137,
+    "invalid_form_count": 56,
+    "invalid_result_count": 68,
+    "error_count": 0,
+    "form_accuracy": 0.7268292682926829,
+    "result_accuracy": 0.6682926829268293,
+  }
+}
+
+** SingleSimple ** (with improved prompt)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 7364.508973121643,
+    "average_process_time": 35.924434015227526,
+    "success_form_count": 120,
+    "success_result_count": 119,
+    "invalid_form_count": 85,
+    "invalid_result_count": 86,
+    "error_count": 0,
+    "form_accuracy": 0.5853658536585366,
+    "result_accuracy": 0.5804878048780487,
+  }
+}
+
+** React **
+{
+  "summary": {
+    "total_files": 40,
+    "repeat_count": 5,
+    "total_runs": 197,
+    "total_process_time": 7534.663270711899,
+    "average_process_time": 38.2470216787406,
+    "success_form_count": 118,
+    "success_result_count": 106,
+    "invalid_form_count": 53,
+    "invalid_result_count": 65,
+    "error_count": 26,
+    "overall_success_form_rate": 0.5989847715736041,
+    "overall_success_result_rate": 0.5380710659898477,
+  }
+}
+
+# No utilizing LangDa, using PAL technik, generate the whole code first and the execute.
+# Baseline has as **easier** job, just because it only need to generate the full code.
+And all the models above need to parse each code block into a {"Hash Tag":"code content"} dictionary, 
+for the long-term maintenance and code stability.
+
+** Baseline ** (system prompt only)
+{
+  "summary": {
+    "total_files": 41,
+    "repeat_count": 5,
+    "total_runs": 205,
+    "total_process_time": 9577.482794046402,
+    "average_process_time": 46.719428263640985,
+    "success_form_count": 139,
+    "success_result_count": 122,
+    "invalid_form_count": 66,
+    "invalid_result_count": 83,
+    "error_count": 0,
+    "form_accuracy": 0.6780487804878049,
+    "result_accuracy": 0.5951219512195122,
+  }
+}
+
+
+
+# No utilizing LangDa or PAL technik, get resulk from question directly. 
+{
+  "test_completed": true,
+  "total_files": 41,
+  "repeat_count": 5,
+  "total_runs": 205,
+  "overall_process_time": 7484.057749032974,
+  "avg_time_per_run": 22.036441249382204,
+  "success_form_count": 62,
+  "success_result_count": 82,
+  "invalid_form_count": 143,
+  "invalid_result_count": 123,
+  "error_count": 0,
+  "success_result_rate": 0.4,
+}

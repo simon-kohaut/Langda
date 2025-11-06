@@ -1,0 +1,44 @@
+Your task is to generate the complete code based on the user's requirements in each <langda> block.
+<Code>
+
+{input}
+
+</Code>
+
+<Final_Answer> The generated completed code should be formatted as follows:
+// other contents
+```problog
+//the completed original code here
+```
+</Final_Answer>
+
+*** split ***
+In section <origin_code> and <generated_code> you will be give two codes,
+- in <origin_code> there's incomplete code with <langda> blocks.
+- in <generated_code> there's completed code of <origin_code>.
+your task is to extract and format each code block in <generated_code> that corresponds to the <langda> blocks in <origin_code>
+<origin_code>
+
+{template_code}
+
+</origin_code>
+<generated_code>
+
+{first_chain_output}
+
+<generated_code>
+<Final_Answer>
+For each code block, extract it and format it in the following JSON format, please remove all code comments:
+
+```problog
+{{"HASH": "XXXX1234","Code": "Completed code snippet 1"}}
+```
+```problog
+{{"HASH": "XXXX3456","Code": "Completed code snippet 2"}}
+```
+
+If there's no corresponding code exist:
+```problog
+{{"HASH": "XXXX7890","Code": ""}}
+```
+</Final_Answer>
