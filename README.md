@@ -195,16 +195,26 @@ For OpenAI or Groq, replace `DEEPSEEK` with `OPENAI` or `GROQ`.
 
 ## Langda Syntax
 
+LangDa introduces a unified predicate `langda/3` as the central interface between natural language and probabilistic logic programming.  
+It allows users to describe rules, facts, or reasoning steps directly in English while maintaining full ProbLog compatibility.
+
+Each `langda` predicate can include up to three parameters:
+
 ```prolog
-% Basic
-langda(LLM:"Your instructions").
-
-% With tools
-langda(LOT:"search_tool,retriever_tool", LLM:"Instructions", FUP:"true").
-
-% Dynamic content
-langda(LLM:"Rules for /* City */ weather").
+langda(LLM:"<instruction>", LOT:"<tool>", FUP:"<policy>").
 ```
+
+- **LLM** – *(required)* natural language instruction or description.  
+- **LOT** – *(optional)* external tool specification (`"search"` for web, `"retrieve"` for local DB`).  
+- **FUP** – *(optional)* forced update flag (`"true"` regenerates every run, `"false"` only when changed`).
+
+Example:
+```prolog
+langda(LLM:"What was the weather yesterday in Darmstadt?", LOT:"search", FUP:"true").
+```
+
+LangDa automatically interprets linguistic uncertainty (e.g., *often*, *rarely*) into probabilistic annotations  
+and integrates surrounding facts to infer variable bindings, generating executable ProbLog clauses.
 
 ## Examples
 
