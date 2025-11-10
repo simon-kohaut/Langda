@@ -11,7 +11,7 @@ import re
 import setuptools
 
 # Find Langda version and author strings
-with open("promis/__init__.py", encoding="utf8") as fd:
+with open("langda/__init__.py", encoding="utf8") as fd:
     content = fd.read()
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
     author = re.search(r'^__author__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
