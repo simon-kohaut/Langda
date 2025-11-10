@@ -2,7 +2,7 @@
 
 #
 # This file is part of Langda and licensed under the BSD 3-Clause License.
-# You should have received a copy of the BSD 3-Clause License along with ProMis.
+# You should have received a copy of the BSD 3-Clause License along with Langda.
 # If not, see https://opensource.org/license/bsd-3-clause/.
 #
 
