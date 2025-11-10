@@ -20,7 +20,7 @@ with open("langda/__init__.py", encoding="utf8") as fd:
 with open("README.md", encoding="utf8") as readme:
     long_description = readme.read()
 
-setup(
+setuptools.setup(
     # ===== Basic Information =====
     name="langda",    
     version=version,
